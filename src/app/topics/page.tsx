@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
-import { DEFAULT_TOPICS, PERSPECTIVES } from '@/lib/data';
+import { DEFAULT_TOPICS } from '@/lib/data';
 import { ArrowRight, BookOpen, Scroll, MessageSquare, PlusCircle } from 'lucide-react';
 
 export default function TopicsPage() {
@@ -13,13 +13,13 @@ export default function TopicsPage() {
         <div className="max-w-3xl mb-12 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7A1C2C]/10 border border-[#7A1C2C]/20 text-[#7A1C2C] text-xs font-semibold">
             <Scroll className="w-3.5 h-3.5" />
-            <span>Theological Questions Archive</span>
+            <span>Protestant Theological Inquiries</span>
           </div>
           <h1 className="font-serif-kr text-3xl sm:text-4xl font-bold text-[#2C2A29]">
-            신학 및 교리 토론 주제
+            개신교 신학 및 교리 탐구 주제
           </h1>
           <p className="text-[#57534E] text-base leading-relaxed">
-            기독교 사상사에서 논쟁의 중심이 되어 온 핵심 쟁점들입니다. 추천 주제를 선택하거나 직접 원하는 자유 주제를 작성해 토론해 보세요.
+            성경을 중심으로 개혁주의, 루터교, 웨슬리안, 침례교, 오순절 등 개신교 사상사에서 의미 깊게 논의되어 온 핵심 질문들입니다.
           </p>
           
           <div className="pt-2">
@@ -28,7 +28,7 @@ export default function TopicsPage() {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7A1C2C] text-[#FDFBF7] text-xs font-semibold hover:bg-[#9B2C3E] transition-all border border-[#58121E]"
             >
               <PlusCircle className="w-4 h-4" />
-              나만의 자유 주제로 토론 열기
+              자유로운 질문으로 대화 열기
             </Link>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function TopicsPage() {
                     {topic.category}
                   </span>
                   <span className="text-xs text-[#78716C] font-medium">
-                    누적 토론 {topic.popularCount.toLocaleString()}회
+                    누적 대화 {topic.popularCount.toLocaleString()}회
                   </span>
                 </div>
 
@@ -61,7 +61,7 @@ export default function TopicsPage() {
                 {/* Verses */}
                 <div className="p-3 rounded-xl bg-[#FDFBF7] border border-[#E8E2D5] space-y-1">
                   <div className="text-[11px] font-semibold text-[#7A1C2C] flex items-center gap-1">
-                    <BookOpen className="w-3.5 h-3.5" /> 주요 관련 성경 구절
+                    <BookOpen className="w-3.5 h-3.5" /> 관련 성경 구절
                   </div>
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {topic.verses.map((v, idx) => (
@@ -75,7 +75,7 @@ export default function TopicsPage() {
                 {/* Perspectives badge */}
                 <div>
                   <span className="text-[11px] text-[#78716C] block mb-1">
-                    관련 신학 전통:
+                    관련 개신교 전통:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {topic.perspectives.map((p, idx) => (
@@ -93,7 +93,7 @@ export default function TopicsPage() {
                   className="px-5 py-2.5 rounded-xl bg-[#7A1C2C] text-[#FDFBF7] font-semibold text-xs hover:bg-[#9B2C3E] transition-colors flex items-center gap-2 border border-[#58121E]"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  이 주제로 AI 토론하기
+                  이 주제로 대화하기
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -103,7 +103,7 @@ export default function TopicsPage() {
       </main>
 
       <footer className="py-8 bg-[#FDFBF7] text-center text-xs text-[#78716C] border-t border-[#E8E2D5]">
-        <p>© 2026 THEOLOGIA. All rights reserved.</p>
+        <p>© 2026 THEOLOGIA. All rights reserved. 개신교 신학 탐구 공간.</p>
       </footer>
     </div>
   );

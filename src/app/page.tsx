@@ -16,19 +16,19 @@ export default function Home() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#7A1C2C]/10 border border-[#7A1C2C]/20 text-[#7A1C2C] text-xs font-semibold tracking-wide">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>기독교 교리 & 성경 AI 지적 토론 플랫폼</span>
+              <span>개신교 성경·신학 탐구 및 AI 지적 대화 플랫폼</span>
             </div>
 
             {/* Headline */}
             <h1 className="font-serif-kr text-4xl sm:text-5xl md:text-6xl font-black text-[#2C2A29] leading-tight tracking-tight">
-              신학적 지성과 깊이 있는<br />
-              <span className="text-[#7A1C2C] italic">AI 변증 및 교리 토론</span>
+              성경과 개신교 신학의 깊이 있는<br />
+              <span className="text-[#7A1C2C] italic">지적 대화 & 교리 탐구</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-[#57534E] leading-relaxed font-light">
-              단순한 챗봇 질문답변을 넘어, 사용자가 설정한 <span className="font-semibold text-[#2C2A29]">신학적 관점</span>과 <span className="font-semibold text-[#2C2A29]">입장</span>에 맞추어 
-              교파별 정통 교리에 근거해 짚어주는 다각도 신학 토론실입니다.
+              오직 성경(Sola Scriptura)을 중심으로 <span className="font-semibold text-[#2C2A29]">개혁주의, 루터교, 웨슬리안, 침례교, 오순절</span> 등 
+              개신교 내부의 다채롭고 깊이 있는 신학 전통을 AI와 함께 자유롭게 대화하며 탐구합니다.
             </p>
 
             {/* CTA Buttons */}
@@ -38,40 +38,41 @@ export default function Home() {
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#7A1C2C] text-[#FDFBF7] font-semibold text-lg hover:bg-[#9B2C3E] transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 border border-[#58121E]"
               >
                 <MessageSquare className="w-5 h-5" />
-                AI 토론 시작하기
+                AI 신학 대화 시작하기
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="#topics"
+                href="/bible"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#F7F3EB] text-[#2C2A29] font-medium text-lg hover:bg-[#E8E2D5] transition-all border border-[#D9D2C5] flex items-center justify-center gap-2"
               >
-                추천 주제 살펴보기
+                <BookOpen className="w-5 h-5 text-[#7A1C2C]" />
+                성경 66권 전체 읽기
               </Link>
             </div>
 
-            {/* Core Values / Features bar */}
+            {/* Core Values bar */}
             <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left border-t border-[#E8E2D5] mt-12">
               <div className="p-4 rounded-lg bg-[#F7F3EB]/60 border border-[#E8E2D5]">
                 <ShieldCheck className="w-6 h-6 text-[#7A1C2C] mb-2" />
-                <h3 className="font-serif-kr font-bold text-base text-[#2C2A29]">교파별 객관적 비교</h3>
+                <h3 className="font-serif-kr font-bold text-base text-[#2C2A29]">개신교 전통의 조명</h3>
                 <p className="text-xs text-[#78716C] mt-1 leading-relaxed">
-                  특정 전통을 절대 정답으로 강요하지 않고 개혁주의, 루터교, 가톨릭, 성공회 등 각 교파의 시각을 조명합니다.
+                  특정 교파 하나를 정답으로 단정하지 않고, 개혁주의, 웨슬리안, 루터교, 침례교 등 개신교 내부의 다양한 신학적 렌즈를 조명합니다.
                 </p>
               </div>
 
               <div className="p-4 rounded-lg bg-[#F7F3EB]/60 border border-[#E8E2D5]">
                 <Scale className="w-6 h-6 text-[#7A1C2C] mb-2" />
-                <h3 className="font-serif-kr font-bold text-base text-[#2C2A29]">맞춤형 입장 & 난이도</h3>
+                <h3 className="font-serif-kr font-bold text-base text-[#2C2A29]">연속적인 자연스러운 대화</h3>
                 <p className="text-xs text-[#78716C] mt-1 leading-relaxed">
-                  입문자부터 전문 신학자 수준까지, 사용자 입장 대 AI 반론 구도를 자율적으로 구성합니다.
+                  고정된 템플릿 없이 이전 대화 맥락을 완벽히 이해하며 실제 사람과 대화하듯 질문과 반론을 나눕니다.
                 </p>
               </div>
 
               <div className="p-4 rounded-lg bg-[#F7F3EB]/60 border border-[#E8E2D5]">
                 <Feather className="w-6 h-6 text-[#7A1C2C] mb-2" />
-                <h3 className="font-serif-kr font-bold text-base text-[#2C2A29]">엄밀한 성경 텍스트</h3>
+                <h3 className="font-serif-kr font-bold text-base text-[#2C2A29]">성경 66권 전체 본문</h3>
                 <p className="text-xs text-[#78716C] mt-1 leading-relaxed">
-                  성경 구절을 자의적으로 왜곡하거나 환각(Hallucination)하지 않고 정확한 말씀 근거를 활용합니다.
+                  창세기부터 요한계시록까지 개역한글 공인 성경 66권 전체 장/절 본문을 온전히 열람하고 탐구합니다.
                 </p>
               </div>
             </div>
@@ -86,20 +87,20 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <div className="text-xs uppercase tracking-widest text-[#7A1C2C] font-semibold mb-2">
-                Core Theological Questions
+                Protestant Theological Inquiries
               </div>
               <h2 className="font-serif-kr text-3xl sm:text-4xl font-bold text-[#2C2A29]">
-                추천 신학 토론 주제
+                추천 개신교 신학 탐구 주제
               </h2>
               <p className="text-[#78716C] mt-2 text-sm sm:text-base">
-                기독교 역사를 통틀어 가장 치열하게 논의되어 온 핵심 교리적 주제들을 탐구해 보세요.
+                예정론, 성화, 성령의 은사, 세례관 등 개신교 사상사에서 의미 깊게 다루어져 온 핵심 질문들입니다.
               </p>
             </div>
             <Link 
               href="/debate" 
               className="mt-4 md:mt-0 text-sm font-semibold text-[#7A1C2C] hover:underline flex items-center gap-1"
             >
-              직접 주제 입력하여 토론하기 <ArrowRight className="w-4 h-4" />
+              자유로운 질문으로 대화하기 <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -116,7 +117,7 @@ export default function Home() {
                       {topic.category}
                     </span>
                     <span className="flex items-center gap-1 text-[#78716C]">
-                      🔥 {topic.popularCount.toLocaleString()}회 토론
+                      🔥 {topic.popularCount.toLocaleString()}회 대화
                     </span>
                   </div>
 
@@ -144,15 +145,15 @@ export default function Home() {
                 </div>
 
                 <div className="pt-4 border-t border-[#E8E2D5] flex items-center justify-between">
-                  <div className="flex gap-1">
-                    {topic.perspectives.slice(0, 3).map((p, idx) => (
+                  <div className="flex flex-wrap gap-1">
+                    {topic.perspectives.slice(0, 2).map((p, idx) => (
                       <span key={idx} className="text-[10px] text-[#7A1C2C] bg-[#7A1C2C]/10 px-1.5 py-0.5 rounded font-medium">
                         {p}
                       </span>
                     ))}
-                    {topic.perspectives.length > 3 && (
+                    {topic.perspectives.length > 2 && (
                       <span className="text-[10px] text-[#78716C] bg-[#E8E2D5] px-1.5 py-0.5 rounded">
-                        +{topic.perspectives.length - 3}
+                        +{topic.perspectives.length - 2}
                       </span>
                     )}
                   </div>
@@ -161,7 +162,7 @@ export default function Home() {
                     href={`/debate?topic=${encodeURIComponent(topic.title)}`}
                     className="px-3.5 py-1.5 rounded-md bg-[#7A1C2C] text-[#FDFBF7] text-xs font-semibold hover:bg-[#9B2C3E] transition-colors flex items-center gap-1"
                   >
-                    토론 <ArrowRight className="w-3 h-3" />
+                    대화 시작 <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
               </div>
@@ -175,23 +176,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="font-serif-kr text-2xl sm:text-3xl font-bold text-[#2C2A29]">
-              지원하는 8가지 신학적 관점
+              주요 개신교 신학 전통
             </h2>
             <p className="text-xs sm:text-sm text-[#78716C] mt-2">
-              교파 고유의 렌즈를 통해 동일한 성경적 명제를 보다 깊고 다양하게 재조명합니다.
+              오직 성경 안에서 고백되어 온 개신교 내부의 다채롭고 풍성한 신학적 유산을 탐구합니다.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {PERSPECTIVES.map((p) => (
-              <div key={p.name} className="p-4 rounded-lg bg-[#FDFBF7] border border-[#E8E2D5]">
+              <div key={p.name} className="p-4 rounded-xl bg-[#FDFBF7] border border-[#E8E2D5] shadow-2xs">
                 <div className="font-serif-kr font-bold text-base text-[#7A1C2C] mb-1">
                   {p.name}
                 </div>
                 <div className="text-[11px] font-medium text-[#44403C] mb-1">
                   {p.keyEmphasis}
                 </div>
-                <div className="text-[10px] text-[#78716C] line-clamp-2">
+                <div className="text-[10px] text-[#78716C] line-clamp-2 leading-relaxed">
                   {p.description}
                 </div>
               </div>
@@ -204,7 +205,7 @@ export default function Home() {
       <footer className="mt-auto py-8 bg-[#FDFBF7] text-center text-xs text-[#78716C] border-t border-[#E8E2D5]">
         <div className="max-w-7xl mx-auto px-4">
           <p className="font-serif-kr text-[#7A1C2C] font-semibold text-sm mb-2">THEOLOGIA</p>
-          <p>© 2026 THEOLOGIA Lab. All rights reserved. 성경적 변증과 교리 토론을 위한 AI 연구 공간입니다.</p>
+          <p>© 2026 THEOLOGIA. All rights reserved. 개신교 성경·신학 탐구 및 AI 대화 플랫폼.</p>
         </div>
       </footer>
     </div>

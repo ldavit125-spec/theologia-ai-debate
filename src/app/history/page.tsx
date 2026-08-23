@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
-import { History, MessageSquare, ArrowRight, Calendar, Trash2, RotateCcw, Eye, BookMarked } from 'lucide-react';
+import { History, MessageSquare, ArrowRight, Calendar, Trash2, Eye } from 'lucide-react';
 import { SavedDebateSession } from '@/lib/data';
 
 const HISTORY_DEBATES_STORAGE_KEY = 'theologia_debates';
@@ -22,38 +22,38 @@ export default function HistoryPage() {
         const defaultSamples: SavedDebateSession[] = [
           {
             id: 'sample-1',
-            topicTitle: '우치무라 간조의 사상 핵심이 뭐야?',
-            userPosition: '우치무라 간조의 사상 핵심이 뭐야?',
-            perspective: '초교파',
+            topicTitle: '인간에게 자유의지가 있다고 봐?',
+            userPosition: '인간에게 자유의지가 있다고 봐?',
+            perspective: '초교파 복음주의',
             difficulty: '일반',
             date: '2026. 8. 23.',
             createdAt: Date.now() - 3600000,
             messageCount: 4,
-            lastSummary: '우치무라 간조의 무교회주의 사상 핵심과 개혁주의/가톨릭과의 대화적 고찰.',
+            lastSummary: '개신교 내부의 개혁주의와 웨슬리안 전통의 자유의지·예정론 대화.',
             messages: [
               {
                 id: 'm1',
                 sender: 'user',
                 timestamp: '오후 3:45',
-                content: '우치무라 간조의 사상 핵심이 뭐야?'
+                content: '인간에게 자유의지가 있다고 봐?'
               },
               {
                 id: 'm2',
                 sender: 'ai',
                 timestamp: '오후 3:45',
-                content: '우치무라 간조(內村鑑三)의 사상은 한마디로 "제도와 교리를 넘어선 살아있는 십자가 복음으로의 회귀"라고 볼 수 있습니다.\n\n그는 제도화된 교회와 교파주의를 비판하고 오직 성경과 십자가 신앙, 신자의 영적 자율성을 강조했습니다.'
+                content: '개신교 신학 안에서도 이 문제는 꽤 깊이 갈립니다. 개혁주의(장로교) 쪽에서는 구원에 있어 하나님의 절대 주권과 은혜를 훨씬 강하게 잡는 반면, 웨슬리안(감리교) 쪽에서는 선행은총 안에서 인간이 실제로 응답하거나 거절할 수 있는 인격적 자유를 강조하죠.'
               },
               {
                 id: 'm3',
                 sender: 'user',
                 timestamp: '오후 3:47',
-                content: '가톨릭이랑 토론시켜봐'
+                content: '개혁주의는?'
               },
               {
                 id: 'm4',
                 sender: 'ai',
                 timestamp: '오후 3:47',
-                content: '가톨릭: "2천 년 동안 성령의 인도로 보존되어 온 교회의 거룩한 전통과 성체성사를 떠나서는 온전한 신앙의 일치를 이루기 어렵습니다."\n\n무교회주의 (우치무라 간조): "하지만 교황 제도나 사제직이 그리스도와 신자 사이를 가로막는다면 그것은 오히려 복음의 자유를 훼손하는 것 아닙니까?"'
+                content: '개혁주의는 타락한 인간의 의지가 죄의 영향력 아래 속박되어 있어서, 하나님의 무조건적인 선택과 불가항력적인 은혜가 먼저 임하지 않는 한 스스로 회심할 수 없다고 봅니다.'
               }
             ]
           }
@@ -97,13 +97,13 @@ export default function HistoryPage() {
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7A1C2C]/10 border border-[#7A1C2C]/20 text-[#7A1C2C] text-xs font-semibold">
               <History className="w-3.5 h-3.5" />
-              <span>Theology Dialogue Archive</span>
+              <span>Protestant Dialogue Archive</span>
             </div>
             <h1 className="font-serif-kr text-3xl sm:text-4xl font-bold text-[#2C2A29]">
               내 신학 대화 기록
             </h1>
             <p className="text-[#57534E] text-sm sm:text-base leading-relaxed">
-              브라우저에 보관된 이전 성경·신학 대화 목록입니다. 언제든지 다시 보거나 이어서 질문할 수 있습니다.
+              브라우저에 보관된 개신교 성경·신학 대화 목록입니다. 언제든지 다시 보거나 이어서 질문할 수 있습니다.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function HistoryPage() {
                 저장된 대화 기록이 없습니다.
               </p>
               <p className="text-xs text-[#78716C]">
-                신학적 의문이나 궁금한 점을 AI에게 자유롭게 질문해 보세요.
+                개신교 신학적 의문이나 궁금한 점을 AI에게 자유롭게 질문해 보세요.
               </p>
               <Link
                 href="/debate"
@@ -148,7 +148,7 @@ export default function HistoryPage() {
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="px-2.5 py-0.5 rounded text-xs font-bold bg-[#7A1C2C] text-white">
-                    대화 기록
+                    개신교 신학 대화
                   </span>
 
                   <div className="flex items-center gap-3 text-xs text-[#78716C]">

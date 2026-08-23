@@ -17,17 +17,12 @@ import {
 import { DebateApiResponse } from '@/lib/debateService';
 import { 
   Send, 
-  RotateCcw, 
   Settings, 
   Sparkles, 
   User, 
   Bot, 
-  Check, 
   BookMarked, 
-  Edit3, 
   Flame, 
-  ShieldCheck, 
-  Layers, 
   StopCircle, 
   PlusCircle, 
   CheckCircle2,
@@ -48,12 +43,12 @@ function DebateContent() {
 
   // 2. User Position
   const [userPosition, setUserPosition] = useState(
-    '예정론과 자유의지의 관계에 대해 알고 싶습니다'
+    '예정론과 자유의지에 대한 개신교 신학적 입장을 알고 싶습니다'
   );
 
-  // 3. Settings
+  // 3. Settings (Protestant default)
   const [aiRole, setAiRole] = useState<AiRoleType>('자유토론');
-  const [perspective, setPerspective] = useState<PerspectiveType>('초교파');
+  const [perspective, setPerspective] = useState<PerspectiveType>('초교파 복음주의');
   const [difficulty, setDifficulty] = useState<DifficultyLevel>('일반');
 
   // Debate State
@@ -156,7 +151,7 @@ function DebateContent() {
     setUserPosition(t.title);
   };
 
-  // Start Natural Theological Dialogue
+  // Start Natural Dialogue
   const handleStartDebate = async () => {
     setIsStarted(true);
     setIsFinished(false);
@@ -179,7 +174,7 @@ function DebateContent() {
         })
       });
 
-      if (!res.ok) throw new Error('토론 API 호출 실패');
+      if (!res.ok) throw new Error('대화 API 호출 실패');
       const data: DebateApiResponse = await res.json();
 
       const initialAiMsg: DebateMessage = {
@@ -197,7 +192,7 @@ function DebateContent() {
     }
   };
 
-  // Natural Follow-up Conversation
+  // Continuous Follow-up Conversation
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputMessage.trim() || isGenerating || isFinished) return;
@@ -231,7 +226,7 @@ function DebateContent() {
         })
       });
 
-      if (!res.ok) throw new Error('토론 API 호출 실패');
+      if (!res.ok) throw new Error('대화 API 호출 실패');
       const data: DebateApiResponse = await res.json();
 
       const aiMsg: DebateMessage = {
@@ -262,19 +257,19 @@ function DebateContent() {
     setIsFinished(false);
     setIsConfigOpen(false);
     setTopicInput('인간에게 자유의지가 있다면 하나님의 예정과 모순되는 것 아닌가?');
-    setUserPosition('예정론과 자유의지의 관계에 대해 알고 싶습니다');
+    setUserPosition('예정론과 자유의지에 대한 개신교 신학적 입장을 알고 싶습니다');
   };
 
   return (
     <div className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
       
-      {/* Optional Configuration Dropdown / Modal */}
+      {/* Optional Configuration Panel */}
       {isConfigOpen && (
         <div className="bg-[#F7F3EB] rounded-2xl p-5 border border-[#E8E2D5] shadow-sm space-y-4 animate-fadeIn">
           <div className="flex items-center justify-between border-b border-[#E8E2D5] pb-2">
             <h2 className="font-serif-kr font-bold text-base text-[#2C2A29] flex items-center gap-2">
               <Settings className="w-4 h-4 text-[#7A1C2C]" />
-              신학 질문 및 대화 옵션
+              개신교 신학 대화 옵션
             </h2>
             <button
               onClick={() => setIsConfigOpen(false)}
@@ -299,7 +294,7 @@ function DebateContent() {
             </div>
 
             <div>
-              <label className="text-[11px] font-bold text-[#44403C] block mb-1">참고 신학 관점</label>
+              <label className="text-[11px] font-bold text-[#44403C] block mb-1">참고 개신교 전통</label>
               <select
                 value={perspective}
                 onChange={(e) => setPerspective(e.target.value as PerspectiveType)}
@@ -335,14 +330,14 @@ function DebateContent() {
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-[#7A1C2C] text-white">
-                THEOLOGIA AI
+                THEOLOGIA
               </span>
               <span className="text-xs text-[#78716C] font-medium">
-                자유로운 성경·신학 대화 & 토론
+                개신교 성경·신학 AI 지적 대화
               </span>
             </div>
             <h1 className="font-serif-kr font-bold text-lg sm:text-xl text-[#2C2A29]">
-              {topicInput || '자유 신학 질문'}
+              {topicInput || '개신교 신학 질문'}
             </h1>
           </div>
 
@@ -375,7 +370,7 @@ function DebateContent() {
           </div>
         )}
 
-        {/* Messages Feed (Clean, Natural Markdown) */}
+        {/* Messages Feed */}
         <div className="flex-1 p-6 space-y-6 overflow-y-auto max-h-[540px]">
           {messages.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center p-8 space-y-6">
@@ -385,10 +380,10 @@ function DebateContent() {
               
               <div className="space-y-2 max-w-lg">
                 <h3 className="font-serif-kr font-bold text-xl text-[#2C2A29]">
-                  어떤 신학적 질문이든 자유롭게 물어보세요
+                  개신교 신학에 관한 어떤 질문이든 자유롭게 물어보세요
                 </h3>
                 <p className="text-xs sm:text-sm text-[#78716C] leading-relaxed">
-                  고정된 템플릿이나 억지스러운 틀 없이, 질문의 성격에 맞춰 가장 자연스럽고 유용한 방식으로 설명·비교·토론해 드립니다.
+                  개혁주의, 루터교, 웨슬리안, 침례교 등 다양한 개신교 전통의 시각과 성경 텍스트를 바탕으로 맥락을 이어가며 자연스럽게 대화합니다.
                 </p>
               </div>
 
@@ -465,7 +460,7 @@ function DebateContent() {
           {isGenerating && (
             <div className="flex items-center gap-3 text-xs text-[#78716C] italic font-serif-kr bg-[#F7F3EB] p-3.5 rounded-2xl border border-[#E8E2D5] w-fit animate-pulse">
               <Bot className="w-4 h-4 text-[#7A1C2C]" />
-              질문의 의도를 분석하여 가장 자연스러운 답변을 구성하고 있습니다...
+              성경과 개신교 신학 맥락을 분석하여 자연스러운 답변을 구성하고 있습니다...
             </div>
           )}
           <div ref={messagesEndRef} />
@@ -501,7 +496,7 @@ function DebateContent() {
                   type="text"
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
-                  placeholder="예: 우치무라 간조의 사상 핵심이 뭐야? / 개혁주의 관점에선 뭐라고 할까? / 가톨릭이랑 토론시켜봐..."
+                  placeholder="예: 개혁주의는? / 웨슬리는? / 침례교 관점에선? / 난 인간에게 선택권이 있다고 보는데..."
                   className="flex-1 px-4 py-3.5 rounded-2xl bg-[#FDFBF7] border border-[#D9D2C5] focus:outline-none focus:border-[#7A1C2C] text-xs sm:text-sm text-[#2C2A29] placeholder-[#A8A29E]"
                 />
                 <button
@@ -517,7 +512,7 @@ function DebateContent() {
               <div className="flex items-center justify-between text-[11px] text-[#78716C] px-1">
                 <span className="flex items-center gap-1">
                   <Sparkle className="w-3.5 h-3.5 text-[#7A1C2C]" />
-                  후속 질문을 하면 이전 대화 맥락을 기억하고 자연스럽게 이어갑니다.
+                  개혁주의, 루터교, 감리교, 침례교 등 이전 대화 맥락을 기억하여 자연스럽게 이어갑니다.
                 </span>
                 
                 {messages.length > 0 && (
